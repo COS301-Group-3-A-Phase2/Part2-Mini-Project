@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt]{report}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\makeindex
+
+\usepackage{longtable}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+% define the title
+\author{Group3_a}
+\title{ Assignment 1 Report}
+\begin{document}
+\setlength{\parskip}{6pt}
+
+% generates the title
+\begin{titlepage}
+
+\begin{center}
+% Upper part of the page       
+\includegraphics[width=1\textwidth]{./up-logo.jpg}\\[0.4cm]    
+\textsc{\LARGE Department of Computer Science}\\[1.5cm]
+\textsc{\Large COS 301 - Software Engineering}\\[0.5cm]
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries COS 301 - Mini Project}\\[0.4cm]
+\HRule \\[0.4cm]
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Sean {Hill}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Student number:} \\
+u12221458
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Liz {Joseph}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u10075268
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Jessica {Lessev}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13049136
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Kale-ab {Tessera}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13048423
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Sphelele {Malo}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u12247040
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Diana {Obo}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13134885
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Armand {Piterse}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u12167844
+\end{flushright}
+\end{minipage}
+\vfill
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+\footnotesize
+\input{declaration_of_originality.tex}
+\normalsize
+
+\renewcommand{\thesection}{\arabic{section}}
+\newpage
+\begin{center}
+\textsc{\LARGE Architectural Requirements}\\[1.5cm]
+\textsc{\Large Buzz Space link}\\[0.5cm]
+For further references see \href{https://github.com/COS301-Group-3-A-Phase2/Part2-Mini-Project.git}{gitHub}.
+\today
+\end{center}
+\tableofcontents{}
+
+\newpage
+
+% You are welcome to edit these
+% They change according to how you structure your work.
+\section{Change Log}
+
+\section{Introduction}
+Designing and implementing a system as the one in question is a vast amount of work and requires a lot of planning and thinking. All the functional requirements needed for the system were covered in the previous phase. In this phase all the non-functional requirements will be covered. These are all categorized as architectural requirements.  \\
+\subsection{Purpose}
+The main purpose of this document is to decompose the system at hand and fully describe the decomposition in terms of subsystem responsibilities, the mapping of the subsystem to hardware and the dependencies among the subsystems. Policy decisions that need to be made is also described in this document. This included decisions such as access control, data storage and control flow.\\\\
+The document will cover all the non-functional aspects of the requirements including:\\
+•	the architectural scope comprising the responsibilities,\\
+•	the quality requirements for the software system,\\
+•	the access and integration requirements, and\\
+•	the architectural constrains. \\
+
+\subsection{Project Scope}
+The scope of this phase is understanding the functional requirements covered in the previous phase and using them to build and derive the architectural requirements needed for the implementation of the system.\\
+
+\section{Access Channel Requirements}
+\subsection{Platforms}
+
+\section{Quality Requirements}
+\subsection{Performance}
+\subsection{Reliability}
+\subsection{Scalability}
+\subsection{Security}
+\subsection{Flexibility}
+\subsection{Maintainability}
+\subsection{Auditability}
+\subsection{Monitorability}
+\subsection{Cost}
+\subsection{Usability}
+
+\section{Integration Requirements}
+\subsection{Integration Channel}
+\subsection{Protocols}
+\subsection{API Specifications}
+\subsection{Quality Requirements}
+
+\section{Architecture Constraints}
+\subsection{Technologies}
+\subsection{Architectural Patterns/Frameworks}
+
+\section{Policies}
+
+\section{Traceability Matrix}
+
+\section{References}
+PIETERSE, V. 2015. COS301: Mini project Buzz. In: Lecture notes issued online. University of Pretoria. Pretoria, South Africa
+
+\section{Glossary}
+
+\end{document}
+
+\bibliography{myrefs}{} 
+\bibliographystyle{ieeetr}
+\end{document}
