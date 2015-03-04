@@ -51,6 +51,7 @@ u12221458
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
+\emph{} \\
 Liz {Joseph}
 \end{flushleft}
 \end{minipage}
@@ -174,9 +175,57 @@ The scope of this phase is understanding the functional requirements covered in 
 \subsection{API Specifications}
 \subsection{Quality Requirements}
 
+\newpage
 \section{Architecture Constraints}
+
+\subsection{System}
+\begin{description}
+\item The BuzzSpace has to be integrated into the CS department’s website. 
+ \item Reason: The user’s credentials from the CS LDAP will be used for authentication 
+\item  purposes in the BuzzSpace e.g. to register on the BuzzSpace to login.
+\end{description}
+
+\subsection{User}
+\begin{description}
+	\item[$\bullet$] 
+Only users registered for a module from the CS department will be allowed to 
+\item participate in discussions on the discussion forums.
+\end{description}
+
+\begin{description}
+	\item[$\bullet$] 
+Users who are registered as guests on the BuzzSpace will only be allowed to read and \item observe the discussion forums. 
+\item Reason: To manage who has access to the BuzzSpace.
+\end{description}
+
+\subsection{Time}
+\begin{description}
+\item If a user is logged in and remains inactive for more than 30mins the user 
+\item will have to login again to post on the forum. 
+\item  Reason: To ensure security for user Authentication. 
+\end{description}
+
 \subsection{Technologies}
+\begin{description}
+\item[$\bullet$] HTML
+\item To create the skeleton of the BuzzSpace's front-end to enable users to login/logout
+\item create forums and participate in discussions.
+\item [$\bullet$] Javascript and  AJAX
+\item Used for the BuzzSpace's front-end to verify the login details of each user and will keep 
+\item track of user login and particiaptions on discussion forums.
+\item [$\bullet$] PHP
+\item Allows the front end to communicate with the CS LDAP database to access user \item credentials for authentication purposes for logging in to the BuzzSpace.
+\item [$\bullet$] JavaEE
+\item [$\bullet$] JPA and JPQL
+\end{description}
+
 \subsection{Architectural Patterns/Frameworks}
+\begin{description}
+\item[$\bullet$] Layer (object-oriented design)
+\item[$\bullet$] MVC (Model View Controller)
+\item[$\bullet$] Peer-to-Peer Network
+\item[$\bullet$] Services Oriented Architectures
+\end{description}
 
 \section{Policies}
 
