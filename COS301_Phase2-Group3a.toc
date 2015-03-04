@@ -6,27 +6,46 @@
 \contentsline {subsection}{\numberline {3.1}Platforms}{6}{subsection.0.3.1}
 \contentsline {section}{\numberline {4}Quality Requirements}{6}{section.0.4}
 \contentsline {subsection}{\numberline {4.1}Performance}{6}{subsection.0.4.1}
+\contentsline {subsubsection}{Expectation:}{6}{section*.2}
+\contentsline {subsubsection}{Prioritization:}{6}{section*.3}
+\contentsline {subsubsection}{Example in System:}{6}{section*.4}
 \contentsline {subsection}{\numberline {4.2}Reliability}{6}{subsection.0.4.2}
 \contentsline {subsection}{\numberline {4.3}Scalability}{6}{subsection.0.4.3}
+\contentsline {subsubsection}{Expectation:}{6}{section*.5}
+\contentsline {subsubsection}{Prioritization:}{6}{section*.6}
+\contentsline {subsubsection}{Example in System:}{6}{section*.7}
 \contentsline {subsection}{\numberline {4.4}Security}{6}{subsection.0.4.4}
 \contentsline {subsection}{\numberline {4.5}Flexibility}{6}{subsection.0.4.5}
-\contentsline {subsection}{\numberline {4.6}Maintainability}{6}{subsection.0.4.6}
-\contentsline {subsection}{\numberline {4.7}Auditability}{6}{subsection.0.4.7}
-\contentsline {subsection}{\numberline {4.8}Monitorability}{6}{subsection.0.4.8}
-\contentsline {subsection}{\numberline {4.9}Cost}{6}{subsection.0.4.9}
-\contentsline {subsection}{\numberline {4.10}Usability}{6}{subsection.0.4.10}
-\contentsline {section}{\numberline {5}Integration Requirements}{6}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Integration Channel}{6}{subsection.0.5.1}
-\contentsline {subsection}{\numberline {5.2}Protocols}{6}{subsection.0.5.2}
-\contentsline {subsection}{\numberline {5.3}API Specifications}{6}{subsection.0.5.3}
-\contentsline {subsection}{\numberline {5.4}Quality Requirements}{6}{subsection.0.5.4}
-\contentsline {section}{\numberline {6}Architecture Constraints}{7}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}System}{7}{subsection.0.6.1}
-\contentsline {subsection}{\numberline {6.2}User}{7}{subsection.0.6.2}
-\contentsline {subsection}{\numberline {6.3}Time}{7}{subsection.0.6.3}
-\contentsline {subsection}{\numberline {6.4}Technologies}{7}{subsection.0.6.4}
-\contentsline {subsection}{\numberline {6.5}Architectural Patterns/Frameworks}{8}{subsection.0.6.5}
-\contentsline {section}{\numberline {7}Policies}{8}{section.0.7}
-\contentsline {section}{\numberline {8}Traceability Matrix}{8}{section.0.8}
-\contentsline {section}{\numberline {9}References}{8}{section.0.9}
-\contentsline {section}{\numberline {10}Glossary}{8}{section.0.10}
+\contentsline {subsection}{\numberline {4.6}Integratability}{6}{subsection.0.4.6}
+\contentsline {subsubsection}{Expectation:}{6}{section*.8}
+\contentsline {subsubsection}{Prioritization:}{7}{section*.9}
+\contentsline {subsubsection}{Example in System:}{7}{section*.10}
+\contentsline {subsection}{\numberline {4.7}Maintainability}{7}{subsection.0.4.7}
+\contentsline {subsubsection}{Expectation:}{7}{section*.11}
+\contentsline {subsubsection}{Prioritization:}{7}{section*.12}
+\contentsline {subsubsection}{Example in System:}{7}{section*.13}
+\contentsline {subsection}{\numberline {4.8}Auditability}{7}{subsection.0.4.8}
+\contentsline {subsubsection}{Expectation:}{7}{section*.14}
+\contentsline {subsubsection}{Prioritization:}{7}{section*.15}
+\contentsline {subsubsection}{Example in System:}{7}{section*.16}
+\contentsline {subsection}{\numberline {4.9}Monitorability}{8}{subsection.0.4.9}
+\contentsline {subsection}{\numberline {4.10}Cost}{8}{subsection.0.4.10}
+\contentsline {subsection}{\numberline {4.11}Usability}{8}{subsection.0.4.11}
+\contentsline {subsubsection}{Expectation:}{8}{section*.17}
+\contentsline {subsubsection}{Prioritization:}{8}{section*.18}
+\contentsline {subsubsection}{Example in System:}{8}{section*.19}
+\contentsline {section}{\numberline {5}Integration Requirements}{8}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Integration Channel}{8}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}Protocols}{8}{subsection.0.5.2}
+\contentsline {subsection}{\numberline {5.3}API Specifications}{8}{subsection.0.5.3}
+\contentsline {subsection}{\numberline {5.4}Quality Requirements}{8}{subsection.0.5.4}
+\contentsline {section}{\numberline {6}Architecture Constraints}{9}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}System}{9}{subsection.0.6.1}
+\contentsline {subsection}{\numberline {6.2}User}{9}{subsection.0.6.2}
+\contentsline {subsection}{\numberline {6.3}Time}{9}{subsection.0.6.3}
+\contentsline {subsection}{\numberline {6.4}Technologies}{9}{subsection.0.6.4}
+\contentsline {subsection}{\numberline {6.5}Architectural Patterns/Frameworks}{10}{subsection.0.6.5}
+\contentsline {section}{\numberline {7}Policies}{10}{section.0.7}
+\contentsline {section}{\numberline {8}Traceability Matrix}{10}{section.0.8}
+\contentsline {section}{\numberline {9}References}{10}{section.0.9}
+\contentsline {section}{\numberline {10}Glossary}{10}{section.0.10}
