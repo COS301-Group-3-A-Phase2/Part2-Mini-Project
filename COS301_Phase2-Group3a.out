@@ -1,0 +1,32 @@
+\BOOKMARK [1][-]{section.0.1}{Change Log}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.0.2.1}{Purpose}{section.0.2}% 3
+\BOOKMARK [2][-]{subsection.0.2.2}{Project Scope}{section.0.2}% 4
+\BOOKMARK [1][-]{section.0.3}{Access Channel Requirements}{}% 5
+\BOOKMARK [2][-]{subsection.0.3.1}{Platforms}{section.0.3}% 6
+\BOOKMARK [1][-]{section.0.4}{Quality Requirements}{}% 7
+\BOOKMARK [2][-]{subsection.0.4.1}{Performance}{section.0.4}% 8
+\BOOKMARK [2][-]{subsection.0.4.2}{Reliability}{section.0.4}% 9
+\BOOKMARK [2][-]{subsection.0.4.3}{Scalability}{section.0.4}% 10
+\BOOKMARK [2][-]{subsection.0.4.4}{Security}{section.0.4}% 11
+\BOOKMARK [2][-]{subsection.0.4.5}{Flexibility}{section.0.4}% 12
+\BOOKMARK [2][-]{subsection.0.4.6}{Maintainability}{section.0.4}% 13
+\BOOKMARK [2][-]{subsection.0.4.7}{Auditability}{section.0.4}% 14
+\BOOKMARK [2][-]{subsection.0.4.8}{Monitorability}{section.0.4}% 15
+\BOOKMARK [2][-]{subsection.0.4.9}{Cost}{section.0.4}% 16
+\BOOKMARK [2][-]{subsection.0.4.10}{Usability}{section.0.4}% 17
+\BOOKMARK [1][-]{section.0.5}{Integration Requirements}{}% 18
+\BOOKMARK [2][-]{subsection.0.5.1}{Integration Channel}{section.0.5}% 19
+\BOOKMARK [2][-]{subsection.0.5.2}{Protocols}{section.0.5}% 20
+\BOOKMARK [2][-]{subsection.0.5.3}{API Specifications}{section.0.5}% 21
+\BOOKMARK [2][-]{subsection.0.5.4}{Quality Requirements}{section.0.5}% 22
+\BOOKMARK [1][-]{section.0.6}{Architecture Constraints}{}% 23
+\BOOKMARK [2][-]{subsection.0.6.1}{System}{section.0.6}% 24
+\BOOKMARK [2][-]{subsection.0.6.2}{User}{section.0.6}% 25
+\BOOKMARK [2][-]{subsection.0.6.3}{Time}{section.0.6}% 26
+\BOOKMARK [2][-]{subsection.0.6.4}{Technologies}{section.0.6}% 27
+\BOOKMARK [2][-]{subsection.0.6.5}{Architectural Patterns/Frameworks}{section.0.6}% 28
+\BOOKMARK [1][-]{section.0.7}{Policies}{}% 29
+\BOOKMARK [1][-]{section.0.8}{Traceability Matrix}{}% 30
+\BOOKMARK [1][-]{section.0.9}{References}{}% 31
+\BOOKMARK [1][-]{section.0.10}{Glossary}{}% 32
