@@ -10,6 +10,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{makeidx}
 \usepackage{hyperref}
+\usepackage{verbatim}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -122,7 +123,7 @@ u12167844
 \end{center}
 \end{titlepage}
 \footnotesize
-\input{declaration_of_originality.tex}
+%\input{declaration_of_originality.tex}
 \normalsize
 
 \renewcommand{\thesection}{\arabic{section}}
@@ -154,7 +155,7 @@ The document will cover all the non-functional aspects of the requirements inclu
 The scope of this phase is understanding the functional requirements covered in the previous phase and using them to build and derive the architectural requirements needed for the implementation of the system.\\
 
 \section{Access Channel Requirements}
-\begin{description}
+	\subsection{description}
 \item Logging in to the system is done over HTTPS POST, and  we send the user's password as an MD5-encrypted string. 
 \item The user's login details are kept in an HTTP session so the user does not have to keep logging in every time he/she makes a request to the server. 
 \item HTTP sessions are invalidated when the user logs out.
@@ -165,17 +166,15 @@ The scope of this phase is understanding the functional requirements covered in 
 \item Any actions that would delete data from the database will not destroy any data, but instead set a `deleted' flag.
 \item Users are assigned a status level and permissions are set by their status. These permissions will determine the features covered by the interface. This will ensure the users only access features for which they are authorized. For example a guest cannot comment on the posts. 
 \item Users are allowed to CRUD posts but not all features are available to all users. For example, privileged users can delete their posts whilst ordinary users cannot.
-\end
 
 \subsection{Human Access Channel}
-\begin{description}
+	\subsubsection{description}
 \item End users interact with the web client to submit and interact with application jobs and to avail themselves of scalable system tools.
 \item Thin Web client:
 \item We need a thin web client as it allows the client to be relieved of computation duties and offers more security. The data will be verified by the server.
-\end
 
 \subsection{Access Channels}
-\begin{description}
+	\subsubsection{description}
 \item Android client -which is the mobile application, is out of our project scope. It runs on android software architecture.
 \item The Web Client -communicates to services layer through RESTful web services in the access layer. It provides a web-based human intergration channel.
 \item Purpose:
@@ -184,7 +183,6 @@ The scope of this phase is understanding the functional requirements covered in 
 \item[$\bullet$] JSF-2  Java Server Facelets.
 \item[$\bullet$]The managed beans who manage the state for the user and issue the service requests to the services layer will do so.
 \item[$\bullet$] Access to the stateless session beans from the services layer is obtained through dependency injected.
-\end 
 
 \item Services:
 \item[$\bullet$] Web services
@@ -198,10 +196,10 @@ The scope of this phase is understanding the functional requirements covered in 
 \item[$\bullet$] No need for explicit implementation.
 
 \subsection{System Access Channel}
-\begin{description}
+	\subsubsection{description}
 \item Systems administrators interact with the project to configure and build software installations on individual nodes, schedule, manage, and account for application jobs and to continuously monitor the status of the system, repairing it as needed.
 \item The web-based component of the system will be implemented in PHP, AJAX and HTML. 
-\itme Connections to the system will be made to the shared virtual IP of the web servers. 
+\item Connections to the system will be made to the shared virtual IP of the web servers. 
 \item Floating the same virtual IP address between multiple servers in this manner will be managed by Ucarp. The databases will run in a Relational Database. 
 \item The technologies selected for the system are already in use within the client company. 
 \item These technologies include JavaEE, which we will use to run the web services, JPA, to manage the relational data in JavaEE, JPQL, make queries for the database, JSF to build component user interfaces using COBALT and AJAX. 
@@ -223,20 +221,18 @@ The scope of this phase is understanding the functional requirements covered in 
 \item[$\bullet$] MVC architecture
 \item[$\bullet$]Supports both version 4 and 5 of php
 \item[$\bullet$]Flexible caching
-\end
 
 %Kal and Jessica please have a look at this to see if you'd like it in your section
 \subsection{Architecture Patterns}
-\begin{description}
-\time The Model View Control (MVC) architecture will be used in the system.
+	\subsubsection{description}
+\item The Model View Control (MVC) architecture will be used in the system.
 This architecture allows change to the system's state (The Model) is completed through a common interface (The Control). (The View) is where developments are made to user interfaces and these changes are independent to the system providing extensibility at a low cost.
 PHP’s implicit MVC features will be used to implement this architecture. 
 \item We chose MVC because:
 \item[$\bullet$] It encapsulates the interaction from the user and transforms those interactions (in the form of requests) into business logic that interacts with the system model to produce responses. 
 \item[$\bullet$] A (multi-)layered approach encapsulated by MVC which enables the separation of business logic proving the need for sub-systems and internal and external API’s.
-\end
 
-\begin{description}
+	\subsubsection{description}
 \item This architecture will be based on Service Oriented Architecture (SOA) reference architecture. It is a loosely-coupled architecture where services exist independently from each other. They communicate with each other by means of protocols and standards-based interfaces such as SOAP and XML Schema to define messages passed between objects. In this case SOAP would not work.
 \item Services are deemed as individual objects so new services and functionality can easily be added to the existing system during progression.
 \item Reasons to use SOA:
@@ -244,13 +240,79 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \item[$\bullet$] System is open to change and easy alteration
 \item[$\bullet$] Simplicity of implementation.
 \item[$\bullet$] Reuse of objects
-\end
 
 %Armand and Sean please plug in your information here
 \subsection{Intergration Access Channel}
 
 
-\section{Quality Requirements
+\section{Quality Requirements}
+	\subsection{Critical Quality Requirements}
+	%Kale-ab
+		\subsubsection{Scalability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+		\\\\{Pattern: }
+			
+		%Sphe
+		\subsubsection{Reliability And Availability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+		\\\\{Pattern: }
+			
+		%Jess
+		\subsubsection{Security}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+		\\\\{Pattern: }
+		
+	\subsection{Important Quality Requirements}
+		%Jess
+		\subsubsection{Performance}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+			
+		%Sphe
+		\subsubsection{Maintainability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+			
+		%Jess
+		\subsubsection{Usability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		\\\\{Stratagy: }
+			
+		%Kale-ab
+		\subsubsection{Integratability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+		
+	\subsection{Nice-To-Have Quality Requirements}
+		%Sphe
+		\subsubsection{Monitoring And Auditability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+			
+		%Kale-ab
+		\subsubsection{Testability}
+		{Stakeholders: }
+		\\\\{Motivation: }
+		\\\\{Description: }
+
+\begin{comment}		
 \subsection{Performance}
 	\subsubsection{Expectation:} The system has to have a high standard of performance and should not disappoint the user.
 	\subsubsection{Prioritization:} Critical
@@ -299,6 +361,10 @@ PHP’s implicit MVC features will be used to implement this architecture.
 	\subsubsection{Expectation:} The system must be easy to use by the average user.
 	\subsubsection{Prioritization:} Critical
 	\subsubsection{Example in System:} Navigating the site should be straight forward. Buttons and links should be clearly visible and placed in easy to find locations. Naming convention should be descriptive and unambiguous.
+	
+\end{comment}
+	
+	
 \section{Integration Requirements}
 \subsection{Integration Channel}
 \subsection{Protocols}
@@ -309,34 +375,30 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \section{Architecture Constraints}
 
 \subsection{System}
-\begin{description}
+	\subsubsection{description}
 \item The BuzzSpace has to be integrated into the CS department’s website. 
  \item Reason: The user’s credentials from the CS LDAP will be used for authentication 
 \item  purposes in the BuzzSpace e.g. to register on the BuzzSpace to login.
-\end{description}
 
 \subsection{User}
-\begin{description}
+	\subsubsection{description}
 	\item[$\bullet$] 
 Only users registered for a module from the CS department will be allowed to 
 \item participate in discussions on the discussion forums.
-\end{description}
 
-\begin{description}
+	\subsubsection{description}
 	\item[$\bullet$] 
 Users who are registered as guests on the BuzzSpace will only be allowed to read and \item observe the discussion forums. 
 \item Reason: To manage who has access to the BuzzSpace.
-\end{description}
 
 \subsection{Time}
-\begin{description}
+	\subsubsection{description}
 \item If a user is logged in and remains inactive for more than 30mins the user 
 \item will have to login again to post on the forum. 
 \item  Reason: To ensure security for user Authentication. 
-\end{description}
 
 \subsection{Technologies}
-\begin{description}
+	\subsubsection{description}
 \item[$\bullet$] HTML
 \item To create the skeleton of the BuzzSpace's front-end to enable users to login/logout
 \item create forums and participate in discussions.
@@ -347,15 +409,13 @@ Users who are registered as guests on the BuzzSpace will only be allowed to read
 \item Allows the front end to communicate with the CS LDAP database to access user \item credentials for authentication purposes for logging in to the BuzzSpace.
 \item [$\bullet$] JavaEE
 \item [$\bullet$] JPA and JPQL
-\end{description}
 
 \subsection{Architectural Patterns/Frameworks}
-\begin{description}
+	\subsubsection{description}
 \item[$\bullet$] Layer (object-oriented design)
 \item[$\bullet$] MVC (Model View Controller)
 \item[$\bullet$] Peer-to-Peer Network
 \item[$\bullet$] Services Oriented Architectures
-\end{description}
 
 \section{References}
 PIETERSE, V. 2015. COS301: Mini project Buzz. In: Lecture notes issued online. University of Pretoria. Pretoria, South Africa
