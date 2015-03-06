@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.0.1}{Change Log}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.0.2.1}{Purpose}{section.0.2}% 3
+\BOOKMARK [2][-]{subsection.0.2.2}{Project Scope}{section.0.2}% 4
+\BOOKMARK [1][-]{section.0.3}{Access Channel Requirements}{}% 5
+\BOOKMARK [2][-]{subsection.0.3.1}{Human Access Channel}{section.0.3}% 6
+\BOOKMARK [2][-]{subsection.0.3.2}{Access Channels}{section.0.3}% 7
+\BOOKMARK [2][-]{subsection.0.3.3}{System Access Channel}{section.0.3}% 8
+\BOOKMARK [2][-]{subsection.0.3.4}{Architecture Patterns}{section.0.3}% 9
+\BOOKMARK [2][-]{subsection.0.3.5}{Intergration Access Channel}{section.0.3}% 10
+\BOOKMARK [1][-]{section.0.4}{Quality Requirements}{}% 11
+\BOOKMARK [2][-]{subsection.0.4.1}{Critical Quality Requirements}{section.0.4}% 12
+\BOOKMARK [2][-]{subsection.0.4.2}{Important Quality Requirements}{section.0.4}% 13
+\BOOKMARK [2][-]{subsection.0.4.3}{Nice-To-Have Quality Requirements}{section.0.4}% 14
+\BOOKMARK [1][-]{section.0.5}{Integration Requirements}{}% 15
+\BOOKMARK [2][-]{subsection.0.5.1}{Integration Channel}{section.0.5}% 16
+\BOOKMARK [2][-]{subsection.0.5.2}{Protocols}{section.0.5}% 17
+\BOOKMARK [2][-]{subsection.0.5.3}{API Specifications}{section.0.5}% 18
+\BOOKMARK [2][-]{subsection.0.5.4}{Quality Requirements}{section.0.5}% 19
+\BOOKMARK [1][-]{section.0.6}{Architecture Constraints}{}% 20
+\BOOKMARK [2][-]{subsection.0.6.1}{System}{section.0.6}% 21
+\BOOKMARK [2][-]{subsection.0.6.2}{User}{section.0.6}% 22
+\BOOKMARK [2][-]{subsection.0.6.3}{Time}{section.0.6}% 23
+\BOOKMARK [2][-]{subsection.0.6.4}{Technologies}{section.0.6}% 24
+\BOOKMARK [2][-]{subsection.0.6.5}{Architectural Patterns/Frameworks}{section.0.6}% 25
+\BOOKMARK [1][-]{section.0.7}{References}{}% 26
+\BOOKMARK [1][-]{section.0.8}{Glossary}{}% 27
