@@ -155,7 +155,7 @@ The document will cover all the non-functional aspects of the requirements inclu
 The scope of this phase is understanding the functional requirements covered in the previous phase and using them to build and derive the architectural requirements needed for the implementation of the system.\\
 
 \section{Access Channel Requirements}
-	\subsection{description}
+\begin{description}
 \item Logging in to the system is done over HTTPS POST, and  we send the user's password as an MD5-encrypted string. 
 \item The user's login details are kept in an HTTP session so the user does not have to keep logging in every time he/she makes a request to the server. 
 \item HTTP sessions are invalidated when the user logs out.
@@ -166,15 +166,17 @@ The scope of this phase is understanding the functional requirements covered in 
 \item Any actions that would delete data from the database will not destroy any data, but instead set a `deleted' flag.
 \item Users are assigned a status level and permissions are set by their status. These permissions will determine the features covered by the interface. This will ensure the users only access features for which they are authorized. For example a guest cannot comment on the posts. 
 \item Users are allowed to CRUD posts but not all features are available to all users. For example, privileged users can delete their posts whilst ordinary users cannot.
+\end{description}
 
 \subsection{Human Access Channel}
-	\subsubsection{description}
+	\begin{description}
 \item End users interact with the web client to submit and interact with application jobs and to avail themselves of scalable system tools.
 \item Thin Web client:
 \item We need a thin web client as it allows the client to be relieved of computation duties and offers more security. The data will be verified by the server.
+\end{description}
 
 \subsection{Access Channels}
-	\subsubsection{description}
+	\begin{description}
 \item Android client -which is the mobile application, is out of our project scope. It runs on android software architecture.
 \item The Web Client -communicates to services layer through RESTful web services in the access layer. It provides a web-based human intergration channel.
 \item Purpose:
@@ -195,8 +197,9 @@ The scope of this phase is understanding the functional requirements covered in 
 \item[$\bullet$] There’s a need for multiple database connections, with connection pooling.
 \item[$\bullet$] No need for explicit implementation.
 
+\end{description}
 \subsection{System Access Channel}
-	\subsubsection{description}
+	\begin{description}
 \item Systems administrators interact with the project to configure and build software installations on individual nodes, schedule, manage, and account for application jobs and to continuously monitor the status of the system, repairing it as needed.
 \item The web-based component of the system will be implemented in PHP, AJAX and HTML. 
 \item Connections to the system will be made to the shared virtual IP of the web servers. 
@@ -222,17 +225,19 @@ The scope of this phase is understanding the functional requirements covered in 
 \item[$\bullet$]Supports both version 4 and 5 of php
 \item[$\bullet$]Flexible caching
 
+\end{description}
 %Kal and Jessica please have a look at this to see if you'd like it in your section
 \subsection{Architecture Patterns}
-	\subsubsection{description}
+	\begin{description}
 \item The Model View Control (MVC) architecture will be used in the system.
 This architecture allows change to the system's state (The Model) is completed through a common interface (The Control). (The View) is where developments are made to user interfaces and these changes are independent to the system providing extensibility at a low cost.
 PHP’s implicit MVC features will be used to implement this architecture. 
 \item We chose MVC because:
 \item[$\bullet$] It encapsulates the interaction from the user and transforms those interactions (in the form of requests) into business logic that interacts with the system model to produce responses. 
 \item[$\bullet$] A (multi-)layered approach encapsulated by MVC which enables the separation of business logic proving the need for sub-systems and internal and external API’s.
+\end{description}
 
-	\subsubsection{description}
+	\begin{description}
 \item This architecture will be based on Service Oriented Architecture (SOA) reference architecture. It is a loosely-coupled architecture where services exist independently from each other. They communicate with each other by means of protocols and standards-based interfaces such as SOAP and XML Schema to define messages passed between objects. In this case SOAP would not work.
 \item Services are deemed as individual objects so new services and functionality can easily be added to the existing system during progression.
 \item Reasons to use SOA:
@@ -241,6 +246,7 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \item[$\bullet$] Simplicity of implementation.
 \item[$\bullet$] Reuse of objects
 
+\end{description}
 %Armand and Sean please plug in your information here
 \subsection{Intergration Access Channel}
 
@@ -267,28 +273,28 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		\subsubsection{Security}
 		{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc,  as well as the system maintainer.\\
 		
-		\\{Motivation: }\\ Security is classified as critical as it is an essential component of a system. If a system is not secure, it will be susceptible to unauthorized alterations, malicious activites and loss and corruption of information. Thus security is needed to project the system in order for it to continue running smoothly and assure clients of their information safety. \\
+		{Motivation: }\\ Security is classified as critical as it is an essential component of a system. If a system is not secure, it will be susceptible to unauthorized alterations, malicious activites and loss and corruption of information. Thus security is needed to project the system in order for it to continue running smoothly and assure clients of their information safety. \\
 		
-		\\{Description: }\\ Security is the capability of the system to prevent accidental  and malicious activities and actions external to the designed usage, and to prevent revelation or loss of information/ It aims to protect resources and prevent unauthorized modification of information.\\
+		{Description: }\\ Security is the capability of the system to prevent accidental  and malicious activities and actions external to the designed usage, and to prevent revelation or loss of information/ It aims to protect resources and prevent unauthorized modification of information.\\
 		This quality is used in the context of the system hiding necessary information from certain users and keeping information such identities private from the public. The system has to maintain accessibility rights and proper authorization. The system has to provide access to authorized users and deny access to intruders. Information on the system has to be kept safe and the system has to have a high level of integrity.\\
 		
-		\\{Stratagy: }\\ Security can be achieved through processes such as identification authentication, certain users having more privileges than others. Information can further be encrypted where hash codes can not be retrieved. This aspect can be further used to improve other parts of the system such as encrypting all the information regarding logged activities of users.\\
+		{Stratagy: }\\ Security can be achieved through processes such as identification authentication, certain users having more privileges than others. Information can further be encrypted where hash codes can not be retrieved. This aspect can be further used to improve other parts of the system such as encrypting all the information regarding logged activities of users.\\
 		
-		\\{Pattern: } \\ Patterns such as the MVC (Model-View-Controller) can be used to implement security as all the different aspects of the system are handled separately, hence security is built into the system.\\
+		{Pattern: } \\ Patterns such as the MVC (Model-View-Controller) can be used to implement security as all the different aspects of the system are handled separately, hence security is built into the system.\\
 		
 	\subsection{Important Quality Requirements}
 		%Jess
 		\subsubsection{Performance}
 		{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc, as well as the system maintainer.\\
 		
-		\\{Motivation: }\\ This requirement is classified as important rather than critical as performance plays an important role when it comes to a system such as the one at hand but does not play a vital role. If a discussion forum is slow or lacks in performance in certain areas, then the system itself will still function and continue to work just at a slower pace. This however does not affect the system in a major way.	\\
+		{Motivation: }\\ This requirement is classified as important rather than critical as performance plays an important role when it comes to a system such as the one at hand but does not play a vital role. If a discussion forum is slow or lacks in performance in certain areas, then the system itself will still function and continue to work just at a slower pace. This however does not affect the system in a major way.	\\
 		
-		\\{Description: }\\This quality is used in the context of the system running smoothing and upholding a high level of performance. \\
+		{Description: }\\This quality is used in the context of the system running smoothing and upholding a high level of performance. \\
 		The system should not lack in performance. It should flow smoothly and quickly between users activities and actions. The system should display appropriate and correct information at all times. The system should not have lag and should have a high speed of performance. When feedback and statistics are requested, the system should generate them in a timely fashion. The system should not hog essential computer resources such as RAM, memory or CPU time.\\
 		
-		\\{Stratagy: }\\ There are many ways in which good performance can be achieved. The system should be implemented in such a way, that unnecessary memory space is not used up. The system should guarantee that no infinite loops and glitches will be encountered where by the CPU time will be consumed and the system will struggle with performance. Mechanisms such as threading should be used in order to make processing faster and thus better the performance. Concurrency is also vital to improve performance. To name but a few. \\
+		{Stratagy: }\\ There are many ways in which good performance can be achieved. The system should be implemented in such a way, that unnecessary memory space is not used up. The system should guarantee that no infinite loops and glitches will be encountered where by the CPU time will be consumed and the system will struggle with performance. Mechanisms such as threading should be used in order to make processing faster and thus better the performance. Concurrency is also vital to improve performance. To name but a few. \\
 		
-		\\{Patter: }\\ Several patterns can be explored when it comes to improving performance. Flyweight design pattern reduces memory consumption, The Proxy pattern can be used for speed optimization and the Bridge pattern can change the implementation of an abstraction on the fly by always picking the most efficient one.\\
+	{Patter: }\\ Several patterns can be explored when it comes to improving performance. Flyweight design pattern reduces memory consumption, The Proxy pattern can be used for speed optimization and the Bridge pattern can change the implementation of an abstraction on the fly by always picking the most efficient one.\\
 			
 		%Sphe
 		\subsubsection{Maintainability}
@@ -301,12 +307,12 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		\subsubsection{Usability}
 		{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc as well as the system maintainer.\\
 		
-		\\{Motivation: }\\ This requirement is classified as important rather than critical as it is important for a system to be easy to use by the client. However if the system if not fully user friendly and has slight usability issues, it will not affect the system itself and it can be dealt with easily through user manuals and instructions. \\
+		{Motivation: }\\ This requirement is classified as important rather than critical as it is important for a system to be easy to use by the client. However if the system if not fully user friendly and has slight usability issues, it will not affect the system itself and it can be dealt with easily through user manuals and instructions. \\
 		
-		\\{Description: }\\ This quality is used in the context of the system being operational and usable by its users. It forms the foundation of the system. If this quality does not exist then the system its self will not exist.\\
+		{Description: }\\ This quality is used in the context of the system being operational and usable by its users. It forms the foundation of the system. If this quality does not exist then the system its self will not exist.\\
 		Any user who is registered to a module that makes use of the system and is capable of using a basic discussion forum should be able to make use of the system without a user manual. Thus any user who has any background knowledge of social media and discussion forums should be able to navigate and understand the system with little to no effort. The system has to be designed and implemented in such a way that it has to be functional and the users find is “usable”. The same applies for the system maintainers. The system has to be implemented and designed in such a way that it is easy and simple to use by the system maintainers in order to maintain the system.\\
 		
-		\\{Stratagy: }\\ In order to make a system usable, the system has to be user friendly and the user should be able to interact with the system with little effort. This can be achieved by designing the system in such a way that the activities the user can perform are limited and easy to complete. The interface its self should be easy to follow and understand. User manuals and instructions can also be provided.\\
+		{Stratagy: }\\ In order to make a system usable, the system has to be user friendly and the user should be able to interact with the system with little effort. This can be achieved by designing the system in such a way that the activities the user can perform are limited and easy to complete. The interface its self should be easy to follow and understand. User manuals and instructions can also be provided.\\
 			
 		%Kale-ab
 		\subsubsection{Integratability}
@@ -391,30 +397,34 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \section{Architecture Constraints}
 
 \subsection{System}
-	\subsubsection{description}
+	\begin{description}
 \item The BuzzSpace has to be integrated into the CS department’s website. 
  \item Reason: The user’s credentials from the CS LDAP will be used for authentication 
 \item  purposes in the BuzzSpace e.g. to register on the BuzzSpace to login.
+\end{description}
 
 \subsection{User}
-	\subsubsection{description}
+	\begin{description}
 	\item[$\bullet$] 
 Only users registered for a module from the CS department will be allowed to 
 \item participate in discussions on the discussion forums.
+\end{description}
 
-	\subsubsection{description}
+	\begin{description}
 	\item[$\bullet$] 
 Users who are registered as guests on the BuzzSpace will only be allowed to read and \item observe the discussion forums. 
 \item Reason: To manage who has access to the BuzzSpace.
+\end{description}
 
 \subsection{Time}
-	\subsubsection{description}
+	\begin{description}
 \item If a user is logged in and remains inactive for more than 30mins the user 
 \item will have to login again to post on the forum. 
 \item  Reason: To ensure security for user Authentication. 
+\end{description}
 
 \subsection{Technologies}
-	\subsubsection{description}
+	\begin{description}
 \item[$\bullet$] HTML
 \item To create the skeleton of the BuzzSpace's front-end to enable users to login/logout
 \item create forums and participate in discussions.
@@ -425,14 +435,15 @@ Users who are registered as guests on the BuzzSpace will only be allowed to read
 \item Allows the front end to communicate with the CS LDAP database to access user \item credentials for authentication purposes for logging in to the BuzzSpace.
 \item [$\bullet$] JavaEE
 \item [$\bullet$] JPA and JPQL
+\end{description}
 
 \subsection{Architectural Patterns/Frameworks}
-	\subsubsection{description}
+	\begin{description}
 \item[$\bullet$] Layer (object-oriented design)
 \item[$\bullet$] MVC (Model View Controller)
 \item[$\bullet$] Peer-to-Peer Network
 \item[$\bullet$] Services Oriented Architectures
-
+\end{description}
 \section{References}
 PIETERSE, V. 2015. COS301: Mini project Buzz. In: Lecture notes issued online. University of Pretoria. Pretoria, South Africa
 
