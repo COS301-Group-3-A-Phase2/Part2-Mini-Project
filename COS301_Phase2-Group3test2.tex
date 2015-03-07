@@ -1,0 +1,485 @@
+\documentclass[a4paper,12pt]{report}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\makeindex
+
+\usepackage{longtable}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+% define the title
+\author{Group3_a}
+\title{ Assignment 1 Report}
+\begin{document}
+\setlength{\parskip}{6pt}
+
+% generates the title
+\begin{titlepage}
+
+\begin{center}
+% Upper part of the page       
+\includegraphics[width=1\textwidth]{./University_of_Pretoria_Logo.PNG}\\[0.4cm]    
+\textsc{\LARGE Department of Computer Science}\\[1.5cm]
+\textsc{\Large COS 301 - Software Engineering}\\[0.5cm]
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries COS 301 - Mini Project}\\[0.4cm]\
+\HRule \\[0.4cm]
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Sean {Hill}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Student number:} \\
+u12221458
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{} \\
+Liz {Joseph}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u10075268
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Jessica {Lessev}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13049136
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Kale-ab {Tessera}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13048423
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Sphelele {Malo}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u12247040
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Diana {Obo}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u13134885
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Armand {Piterse}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u12167844
+\end{flushright}
+\end{minipage}
+\vfill
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+\footnotesize
+%\input{declaration_of_originality.tex}
+\normalsize
+
+\renewcommand{\thesection}{\arabic{section}}
+\newpage
+\begin{center}
+\textsc{\LARGE Architectural Requirements}\\[1.5cm]
+\textsc{\Large Buzz Space link}\\[0.5cm]
+For further references see \href{https://github.com/COS301-Group-3-A-Phase2/Part2-Mini-Project.git}{gitHub}.
+\today
+\end{center}
+\tableofcontents{}
+
+\newpage
+
+
+\section{Change Log}
+
+
+\section{Introduction}
+Designing and implementing a system as the one in question is a vast amount of work and requires a lot of planning and thinking. All the functional requirements needed for the system were covered in the previous phase. In this phase all the non-functional requirements will be covered. These are all categorized as architectural requirements.  \\
+\subsection{Purpose}
+The main purpose of this document is to decompose the system at hand and fully describe the decomposition in terms of subsystem responsibilities, the mapping of the subsystem to hardware and the dependencies among the subsystems. Policy decisions that need to be made is also described in this document. This included decisions such as access control, data storage and control flow.\\\\
+The document will cover all the non-functional aspects of the requirements including:\\
+•	the architectural scope comprising the responsibilities,\\
+•	the quality requirements for the software system,\\
+•	the access and integration requirements, and\\
+•	the architectural constrains. \\
+
+\subsection{Project Scope}
+The scope of this phase is understanding the functional requirements covered in the previous phase and using them to build and derive the architectural requirements needed for the implementation of the system.\\
+
+\section{Access Channel Requirements}
+\begin{description}
+\item Logging in to the system is done over HTTPS POST, and  we send the user's password as an MD5-encrypted string. 
+\item The user's login details are kept in an HTTP session so the user does not have to keep logging in every time he/she makes a request to the server. 
+\item HTTP sessions are invalidated when the user logs out.
+\item Communication is done over HTTPS, the login credentials should be relatively safe from malicious sniffing of data between the client and server applications.
+\item Common address redundancy protocol will be used to provide load-balancing as well as fail-safe redundancy. 
+\item The servers will share a virtual IP address, which will be floated between them if the main server fails or if there are load problems.
+\item All CRUD actions that will make changes to the database contents will be intercepted at the services layer and logged automatically along with the id of the user making the changes, the status and the date. This will ensure auditability of the system. 
+\item Any actions that would delete data from the database will not destroy any data, but instead set a `deleted' flag.
+\item Users are assigned a status level and permissions are set by their status. These permissions will determine the features covered by the interface. This will ensure the users only access features for which they are authorized. For example a guest cannot comment on the posts. 
+\item Users are allowed to CRUD posts but not all features are available to all users. For example, privileged users can delete their posts whilst ordinary users cannot.
+\end{description}
+
+\subsection{Human Access Channel}
+	\begin{description}
+\item End users interact with the web client to submit and interact with application jobs and to avail themselves of scalable system tools.
+\item Thin Web client:
+\item We need a thin web client as it allows the client to be relieved of computation duties and offers more security. The data will be verified by the server.
+\end{description}
+
+\subsection{Access Channels}
+	\begin{description}
+\item Android client -which is the mobile application, is out of our project scope. It runs on android software architecture.
+\item The Web Client -communicates to services layer through RESTful web services in the access layer. It provides a web-based human intergration channel.
+\item Purpose:
+\item[$\bullet$] Make all user services from the business logic layer accessible through the web browsers.
+\item[$\bullet$] Capture information for the request of objects in the business logic layer and submit the service requests to that layer and render the responses back to the user.
+\item[$\bullet$] JSF-2  Java Server Facelets.
+\item[$\bullet$]The managed beans who manage the state for the user and issue the service requests to the services layer will do so.
+\item[$\bullet$] Access to the stateless session beans from the services layer is obtained through dependency injected.
+
+\item Services:
+\item[$\bullet$] Web services
+\item[$\bullet$] RESTful web services
+\item[$\bullet$] RESTful web services induce desirable properties, such as performance, scalability, and modifiability and this enables services to work best on the web.
+\item[$\bullet$] Note: These services have access to services layer
+
+\item Database: 
+\item[$\bullet$] Relational Database.
+\item[$\bullet$] There’s a need for multiple database connections, with connection pooling.
+\item[$\bullet$] No need for explicit implementation.
+
+\end{description}
+\subsection{System Access Channel}
+	\begin{description}
+\item Systems administrators interact with the project to configure and build software installations on individual nodes, schedule, manage, and account for application jobs and to continuously monitor the status of the system, repairing it as needed.
+\item The web-based component of the system will be implemented in PHP, AJAX and HTML. 
+\item Connections to the system will be made to the shared virtual IP of the web servers. 
+\item Floating the same virtual IP address between multiple servers in this manner will be managed by Ucarp. The databases will run in a Relational Database. 
+\item The technologies selected for the system are already in use within the client company. 
+\item These technologies include JavaEE, which we will use to run the web services, JPA, to manage the relational data in JavaEE, JPQL, make queries for the database, JSF to build component user interfaces using COBALT and AJAX. 
+
+\item Reasons to use COBALT:
+\item[$\bullet$] It is simple and flexible. Systems administrators can easly customize or replace individual components independently of others.
+\item[$\bullet$] Deployment is easier, since the required software and technologies are already up and running.
+\item[$\bullet$] It also provides maintenance benefits, since the system administrators will already be familiar with the technologies.
+\item The system needs to offer support for up to a thousand to two thousand simultaneous users.
+
+\item This will be achieved by means of multiple web servers running PHP, which is known to scale well and is used by many large websites. 
+\item MySQL can be configured to be highly scalable and available as the traffic flow increases.
+\item PHP has many security modules available which can be used to provide presentation-layer authentication.
+
+\item CakePHP is one of the PHP frameworks that we will use. It is a rapid development framework that makes coding in PHP much easier and efficient. It is also based on the MVC architecture which will fit well with our current architectural design. 
+\item Reasons to use CakePHP:
+\item[$\bullet$]Application scaffolding
+\item[$\bullet$]Code generation
+\item[$\bullet$] MVC architecture
+\item[$\bullet$]Supports both version 4 and 5 of php
+\item[$\bullet$]Flexible caching
+
+\end{description}
+%Kal and Jessica please have a look at this to see if you'd like it in your section
+\subsection{Architecture Patterns}
+	\begin{description}
+\item The Model View Control (MVC) architecture will be used in the system.
+This architecture allows change to the system's state (The Model) is completed through a common interface (The Control). (The View) is where developments are made to user interfaces and these changes are independent to the system providing extensibility at a low cost.
+PHP’s implicit MVC features will be used to implement this architecture. 
+\item We chose MVC because:
+\item[$\bullet$] It encapsulates the interaction from the user and transforms those interactions (in the form of requests) into business logic that interacts with the system model to produce responses. 
+\item[$\bullet$] A (multi-)layered approach encapsulated by MVC which enables the separation of business logic proving the need for sub-systems and internal and external API’s.
+\end{description}
+
+	\begin{description}
+\item This architecture will be based on Service Oriented Architecture (SOA) reference architecture. It is a loosely-coupled architecture where services exist independently from each other. They communicate with each other by means of protocols and standards-based interfaces such as SOAP and XML Schema to define messages passed between objects. In this case SOAP would not work.
+\item Services are deemed as individual objects so new services and functionality can easily be added to the existing system during progression.
+\item Reasons to use SOA:
+\item[$\bullet$] It is flexible and agile.
+\item[$\bullet$] System is open to change and easy alteration
+\item[$\bullet$] Simplicity of implementation.
+\item[$\bullet$] Reuse of objects
+
+\end{description}
+%Armand and Sean please plug in your information here
+\subsection{Intergration Access Channel}
+
+
+\section{Quality Requirements}
+	\subsection{Critical Quality Requirements}
+	%Kale-ab
+		\subsubsection{Scalability}
+		\emph{Stakeholders: }\\
+		\\\emph{Motivation: }\\
+		\\\emph{Description: }\\
+		\\\emph{Stratagy: }\\
+		\\\emph{Pattern: }\\
+			
+		%Sphe
+		\subsubsection{Reliability And Availability}
+		\emph{Stakeholders: }\\ Users of the website i.e. students, lecturers, tutors, teaching assistants and system administrator. \\
+		\\\emph{Motivation: }\\ Should the system be unavailable it means that stakeholders have no way of retrieving any information on the system. This could result in important announcements being missed and/or students being unable to get the help they need on a specific topic. \\
+		\\\emph{Description: }\\ This entails the system having as minimal as possible down time and there being no bugs or hardware failures that will cause the system to be unavailable \\
+		\\\emph{Stratagy: }\\
+		\begin{itemize}
+		\item Redundancy in the system. This eliminates a single point of failure. So that if a component in the system fails, it doesn’t cripple the entire system, because there other components that can carry the work.
+		
+		\item Failure detection as it occurs. Should the system run in to a fault the system maintainer should be notified immediately so he can rectify it. 
+		\end{itemize}
+		
+		\emph{Pattern: }\\ Run-time Reconfiguration Pattern ensures the system is designed in such a way that it can be reconfigured without requiring redeployment or restarting the application. This will minimize system downtime, thus maximizing availability.
+			
+		%Jess
+		\subsubsection{Security}
+		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc,  as well as the system maintainer.\\
+		
+		\emph{Motivation: }\\ Security is classified as critical as it is an essential component of a system. If a system is not secure, it will be susceptible to unauthorized alterations, malicious activites and loss and corruption of information. Thus security is needed to project the system in order for it to continue running smoothly and assure clients of their information safety. \\
+		
+		\emph{Description: }\\ Security is the capability of the system to prevent accidental  and malicious activities and actions external to the designed usage, and to prevent revelation or loss of information/ It aims to protect resources and prevent unauthorized modification of information.\\
+		This quality is used in the context of the system hiding necessary information from certain users and keeping information such identities private from the public. The system has to maintain accessibility rights and proper authorization. The system has to provide access to authorized users and deny access to intruders. Information on the system has to be kept safe and the system has to have a high level of integrity.\\
+		
+		\emph{Stratagy: }\\ Security can be achieved through processes such as identification authentication, certain users having more privileges than others. Information can further be encrypted where hash codes can not be retrieved. This aspect can be further used to improve other parts of the system such as encrypting all the information regarding logged activities of users.\\
+		
+		\emph{Pattern: } \\ Patterns such as the MVC (Model-View-Controller) can be used to implement security as all the different aspects of the system are handled separately, hence security is built into the system.\\
+		
+	\subsection{Important Quality Requirements}
+		%Jess
+		\subsubsection{Performance}
+		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc, as well as the system maintainer.\\
+		
+		\emph{Motivation: }\\ This requirement is classified as important rather than critical as performance plays an important role when it comes to a system such as the one at hand but does not play a vital role. If a discussion forum is slow or lacks in performance in certain areas, then the system itself will still function and continue to work just at a slower pace. This however does not affect the system in a major way.	\\
+		
+		\emph{Description: }\\This quality is used in the context of the system running smoothing and upholding a high level of performance. \\
+		The system should not lack in performance. It should flow smoothly and quickly between users activities and actions. The system should display appropriate and correct information at all times. The system should not have lag and should have a high speed of performance. When feedback and statistics are requested, the system should generate them in a timely fashion. The system should not hog essential computer resources such as RAM, memory or CPU time.\\
+		
+		\emph{Strategy: }\\ There are many ways in which good performance can be achieved. The system should be implemented in such a way, that unnecessary memory space is not used up. The system should guarantee that no infinite loops and glitches will be encountered where by the CPU time will be consumed and the system will struggle with performance. Mechanisms such as threading should be used in order to make processing faster and thus better the performance. Concurrency is also vital to improve performance. To name but a few. \\
+		
+	\emph{Pattern: }\\ Several patterns can be explored when it comes to improving performance. Flyweight design pattern reduces memory consumption, The Proxy pattern can be used for speed optimization and the Bridge pattern can change the implementation of an abstraction on the fly by always picking the most efficient one.\\
+			
+		%Sphe
+		\subsubsection{Maintainability}
+		\emph{Stakeholders: }\\ The development team and system maintainers \\ 
+		\\\emph{Motivation: }\\ Any software will eventually need to be updated or fixed at some point. Since this is an issue we will definitely run into at some point, it is imperative that we prepare for it. Having a maintainable system means this task will be done much faster and with much less effort. Also we avoid the risk of compromising other quality requirements like security or system integrity. \\ 
+		\\\emph{Description: }\\ This requirement enforces that the system be easy to maintain and/or update/modify without compromising the security and integrity of the site. It should be possible to modify/maintain the parts of the system without modifying the entire system. \\ 
+		\\\emph{Strategy: }\\ The system should be separated into different components that make use of each other to operate. Components, however, should not depend on the internal details of other components. It should simply request a service and take the response. This ensures that modifying components’ internal information won’t mean having to change all components that make use of it. \\
+		\\\emph{Pattern: }\\ The Pipe and Filter pattern is ideal for this. The various components of the system will act as the filters. Since filters deal with input they were given (They are not concerned with where the data comes from) and produce output without being concerned about any of the other filters, it becomes easy to modify other filters without affecting any of the other. This is perfect for system maintainability.
+			
+		%Jess
+		\subsubsection{Usability}
+		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc as well as the system maintainer.\\
+		
+		\emph{Motivation: }\\ This requirement is classified as important rather than critical as it is important for a system to be easy to use by the client. However if the system if not fully user friendly and has slight usability issues, it will not affect the system itself and it can be dealt with easily through user manuals and instructions. \\
+		
+		\emph{Description: }\\ This quality is used in the context of the system being operational and usable by its users. It forms the foundation of the system. If this quality does not exist then the system its self will not exist.\\
+		Any user who is registered to a module that makes use of the system and is capable of using a basic discussion forum should be able to make use of the system without a user manual. Thus any user who has any background knowledge of social media and discussion forums should be able to navigate and understand the system with little to no effort. The system has to be designed and implemented in such a way that it has to be functional and the users find is “usable”. The same applies for the system maintainers. The system has to be implemented and designed in such a way that it is easy and simple to use by the system maintainers in order to maintain the system.\\
+		
+		\emph{Stratagy: }\\ In order to make a system usable, the system has to be user friendly and the user should be able to interact with the system with little effort. This can be achieved by designing the system in such a way that the activities the user can perform are limited and easy to complete. The interface its self should be easy to follow and understand. User manuals and instructions can also be provided.\\
+			
+		%Kale-ab
+		\subsubsection{Integratability}
+		\emph{Stakeholders: }\\
+		\\\emph{Motivation: }\\
+		\\\emph{Description: }\\
+		\\\emph{Stratagy: }\\
+		
+	\subsection{Nice-To-Have Quality Requirements}
+		%Sphe
+		\subsubsection{Monitoring And Auditability}
+		\emph{Stakeholders: }\\ System administrators and maintainers\\
+		\\\emph{Motivation: }\\ This will help with ensuring users of the site adhere to the systems netiquette and plagiarism policies. Any infringement of these will notify the administrator, who will take action to rectify the matter. The logging of users actions can be reviewed for whatever reason at a later stage to serve as evidence of action for whatever reason it is needed. \\
+		\\\emph{Description: }\\ The activity of users being monitored and logged somewhere to be reviewed at some point. Action can then be taken by the administrator based on the logged actions. \\
+			
+		%Kale-ab
+		\subsubsection{Testability}
+		\emph{Stakeholders: }\\ 
+		\\\emph{Motivation: }\\
+		\\\emph{Description: }\\
+
+\begin{comment}		
+\subsection{Performance}
+	\subsubsection{Expectation:} The system has to have a high standard of performance and should not disappoint the user.
+	\subsubsection{Prioritization:} Critical
+	\subsubsection{Description:} This quality is used in the context of the system running smoothing and upholding a high level of performance.\\ 
+	The system should not lack in performance. It should flow smoothly and quickly between users activities and actions. The system should display appropriate and correct information at all times. The system should not have lag and should have a high speed of performance. When feedback and statistics are requested, the system should generate them in a timely fashion. The system should not hog essential computer resources such as RAM, memory or CPU time.
+	
+\subsection{Reliability}
+	\subsubsection{Expectation:} The system has to be reliable.
+	\subsubsection{Prioritization:} Critical
+	\subsubsection{Description:} This quality is used in the context of the system being trustworthy of its content, structure, and overall existence. The system has to be designed and implemented in such a way that it is reliable to all end-users.  The system has to maintain the same consistency throughout.\\
+	Users using the system have to find the system to be reliable. Thus random faults and errors should not occur. The user should be able to interact with the system without being placed in a situation of uncertainty and untrustworthiness. The system should ensure that all content provided by the users will be stored and used in appropriate ways that data will not get lost, and that misinformation will not occur. For system maintenance, the system should ensure that all content is stored and can be retrieved and that all activity on the system is correctly logged and van be traced back to the user .
+	
+\subsection{Scalability}
+	\subsubsection{Expectation:} System should be able to handle (at the very least) the number of registered students on the CS LDAP system. 
+	\subsubsection{Prioritization:} Critical
+	\subsubsection{Example in System:} Number of simultaneous posts/comments, number of online users etc.
+\subsection{Security}
+	\subsubsection{Expectation:} System has to be secure and safe
+	\subsubsection{Prioritization:} Critical
+	\subsubsection{Stakeholders:} The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc,  as well as the system maintainer.
+	\subsubsection{Description:} This quality is used in the context of the system hiding necessary information from certain users and keeping information such identities private from the public. The system has to maintain accessibility rights and proper authorization. The system has to provide access to authorized users and deny access to intruders. Information on the system has to be kept safe and the system has have a high level of integrity.//
+	When a user logs into the system, the users’ login details should be kept safe from other users. The system has to have protection against “hackers” and intruders that try to alter the system without having privileges to do so. 
+\subsection{Flexibility}
+\subsection{Integratability}
+	\subsubsection{Expectation:} System must integrate well with any host website.
+	\subsubsection{Prioritization:} Important
+	\subsubsection{Example in System:} Users of the host site should be able to access the forum easily. It should seem as if its merely an extension of the host site.
+\subsection{Maintainability}
+	\subsubsection{Expectation:} System must be easy to maintain/modify
+	\subsubsection{Prioritization:} Important
+	\subsubsection{Example in System:} Modular separation of concerns, low coupling and reduced dependencies.
+\subsection{Auditability}
+	\subsubsection{Expectation:} System must be auditable
+	\subsubsection{Prioritization:} Important
+ 	\subsubsection{Example in System:} The plagiarism and netiquette checker should have no problem editing the page to ensure that every post is appropriate for the website.
+\subsection{Monitorability}
+	\subsubsection{Expectation:} System has to be able to be monitored and all activity properly logged.
+	\subsubsection{Prioritization:} Nice to have
+	\subsubsection{Stakeholders:} The stakeholders for this requirement are:  the system maintainers and users in need of statistics
+	\subsubsection{Description:} This quality is used in the context of the system being structured in such a way that statistics and information can be gathered and analysed easily. The system has to be designed and implemented in such a way that all activity and actions are properly logged and data mining can easily be done based on the logged information.\\
+	
+	Users with appropriate privileges should be able to easily track and monitor users’ actions and activity on the system as well as all the shared information.  The system should be easy to audit as all the activity should be well logged and not actions disregarded.
+	
+\subsection{Cost}
+\subsection{Usability}
+	\subsubsection{Expectation:} The system must be easy to use by the average user.
+	\subsubsection{Prioritization:} Critical
+	\subsubsection{Example in System:} Navigating the site should be straight forward. Buttons and links should be clearly visible and placed in easy to find locations. Naming convention should be descriptive and unambiguous.
+	
+\end{comment}
+	
+%Armand
+\section{Integration Requirements}
+\subsection{Integration Channel}
+\begin{description}
+\item CS Website - Will be integrated to work with the BuzzSpaces, each CS module having its own BuzzSpace.
+\item LDAP - This the Computer Science Data Source Adapter, which is used to connect to and retrieve necessary information from the external Computer science database. 
+\item Buzz Moderation - Is a plug-in that moderates the use of language and spam detection on the Buzz system.
+\item Buzz Notification - An add-on that will be used to notify users via email, when there are status changes,
+	moderation failures and appraisals which have been received.
+\item Buzz Reporting - An add-on that a user or lecturer can use to define and generate their own reports.
+\item RDMS - A relational database management system will be used to store and retrieve all data/information that is directly connected to the Buzz system. 
+\item Both client- and server-side scripting to facilitate database access and algorithms.
+\item File creation and storage for the communication of information between modules.
+\end{description}
+
+\subsection{Protocols}
+\begin{description}
+\item HTTPS - Is the transfer protocol for the web interface. Main reason for using this rather than just HTTP is that HTTPS is more secure.
+\item SMTP - Is an emailing protocol that will be used for sending email notifications to users with the Buzz Notification.	
+\item TCP/IP-is the transport layer used to provide devices with a connection to a router 
+	and thus also the internet.
+\end{description}
+\subsection{API Specifications}
+\begin{description}
+\item Buzz uses a REST API. This means that the API consists of a set of resouces which you can request or manipulate using the standard HTTP methods GET and POST. This will make resuming at an earlier left state easier to keep track of to the user.
+\end{description}
+\subsection{Quality Requirements}
+
+\newpage
+\section{Architecture Constraints}
+
+\subsection{System}
+	\begin{description}
+\item The BuzzSpace has to be integrated into the CS department’s website. 
+ \item Reason: The user’s credentials from the CS LDAP will be used for authentication 
+\item  purposes in the BuzzSpace e.g. to register on the BuzzSpace to login.
+\end{description}
+
+\subsection{User}
+	\begin{description}
+	\item[$\bullet$] 
+Only users registered for a module from the CS department will be allowed to 
+\item participate in discussions on the discussion forums.
+\end{description}
+
+	\begin{description}
+	\item[$\bullet$] 
+Users who are registered as guests on the BuzzSpace will only be allowed to read and \item observe the discussion forums. 
+\item Reason: To manage who has access to the BuzzSpace.
+\end{description}
+
+\subsection{Time}
+	\begin{description}
+\item If a user is logged in and remains inactive for more than 30mins the user 
+\item will have to login again to post on the forum. 
+\item  Reason: To ensure security for user Authentication. 
+\end{description}
+
+\subsection{Technologies}
+	\begin{description}
+\item[$\bullet$] HTML
+\item To create the skeleton of the BuzzSpace's front-end to enable users to login/logout
+\item create forums and participate in discussions.
+\item [$\bullet$] Javascript and  AJAX
+\item Used for the BuzzSpace's front-end to verify the login details of each user and will keep 
+\item track of user login and particiaptions on discussion forums.
+\item [$\bullet$] PHP
+\item Allows the front end to communicate with the CS LDAP database to access user \item credentials for authentication purposes for logging in to the BuzzSpace.
+\item [$\bullet$] JavaEE
+\item [$\bullet$] JPA and JPQL
+\end{description}
+
+\subsection{Architectural Patterns/Frameworks}
+	\begin{description}
+\item[$\bullet$] Layer (object-oriented design)
+\item[$\bullet$] MVC (Model View Controller)
+\item[$\bullet$] Peer-to-Peer Network
+\item[$\bullet$] Services Oriented Architectures
+\end{description}
+\section{References}
+PIETERSE, V. 2015. COS301: Mini project Buzz. In: Lecture notes issued online. University of Pretoria. Pretoria, South Africa
+
+\section{Glossary}
+
+\end{document}
+
+\bibliography{myrefs}{} 
+\bibliographystyle{ieeetr}
+\end{document}
