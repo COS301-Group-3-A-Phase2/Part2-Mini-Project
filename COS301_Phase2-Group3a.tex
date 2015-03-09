@@ -274,12 +274,31 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		\end{itemize}
 		
 		\emph{Pattern: }\\ Run-time Reconfiguration Pattern ensures the system is designed in such a way that it can be reconfigured without requiring redeployment or restarting the application. This will minimize system downtime, thus maximizing availability.
-			
+		
+		%Jess
+		\subsubsection{Usability}
+		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc as well as the system maintainer.\\
+		
+		\emph{Motivation: }\\ This requirement is classified as critical  as it is critical for a system to be easy to use by the client. How the user interacts and communicates with the system is vital to the survival and continuation of the systems use. If the system is not usable, then users will not achieve what they wish to on the system and will refrain from using the system. This will lead to the system no longer being needed. \\
+		
+		\emph{Description: }\\ This quality is used in the context of the system being operational and usable by its users. It forms the foundation of the system. If this quality does not exist then the system its self will not exist.\\
+		Any user who is registered to a module that makes use of the system and is capable of using a basic discussion forum should be able to make use of the system without a user manual. Thus any user who has any background knowledge of social media and discussion forums should be able to navigate and understand the system with little to no effort. The system has to be designed and implemented in such a way that it has to be functional and the users find is “usable”. The same applies for the system maintainers. The system has to be implemented and designed in such a way that it is easy and simple to use by the system maintainers in order to maintain the system.\\
+		
+		\emph{Stratagy: }\\ In order to make a system usable, the system has to be user friendly and the user should be able to interact with the system with little effort. This can be achieved by designing the system in such a way that the activities the user can perform are limited and easy to complete. The interface its self should be easy to follow and understand. User manuals and instructions can also be provided.\\
+		
+		%Sphe
+		\subsubsection{Monitoring And Auditability}
+		\emph{Stakeholders: }\\ System administrators and maintainers\\
+		\\\emph{Motivation: }\\ This will help with ensuring users of the site adhere to the systems netiquette and plagiarism policies. Any infringement of these will notify the administrator, who will take action to rectify the matter. The logging of users actions can be reviewed for whatever reason at a later stage to serve as evidence of action for whatever reason it is needed. \\
+		\\\emph{Description: }\\ The activity of users being monitored and logged somewhere to be reviewed at some point. Action can then be taken by the administrator based on the logged actions. \\	
+	
+		
+	\subsection{Important Quality Requirements}
 		%Jess
 		\subsubsection{Security}
 		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc,  as well as the system maintainer.\\
 		
-		\emph{Motivation: }\\ Security is classified as critical as it is an essential component of a system. If a system is not secure, it will be susceptible to unauthorized alterations, malicious activites and loss and corruption of information. Thus security is needed to project the system in order for it to continue running smoothly and assure clients of their information safety. \\
+		\emph{Motivation: }\\ Security is classified as impotant as it is an essential component of a system. If a system is not secure, it will be susceptible to unauthorized alterations, malicious activites and loss and corruption of information. Thus security is needed to project the system in order for it to continue running smoothly and assure clients of their information safety. Security plays a major role in this specific system in terms of privileges. Users' profiles have to be kept secure because each user has a different status on the Buzz space and with each status comes certain privileges. If someone gains access to someone else's profile with higher privileges then they can alter things on the buzz space that should not be changed. \\
 		
 		\emph{Description: }\\ Security is the capability of the system to prevent accidental  and malicious activities and actions external to the designed usage, and to prevent revelation or loss of information/ It aims to protect resources and prevent unauthorized modification of information.\\
 		This quality is used in the context of the system hiding necessary information from certain users and keeping information such identities private from the public. The system has to maintain accessibility rights and proper authorization. The system has to provide access to authorized users and deny access to intruders. Information on the system has to be kept safe and the system has to have a high level of integrity.\\
@@ -287,39 +306,7 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		\emph{Stratagy: }\\ Security can be achieved through processes such as identification authentication, certain users having more privileges than others. Information can further be encrypted where hash codes can not be retrieved. This aspect can be further used to improve other parts of the system such as encrypting all the information regarding logged activities of users.\\
 		
 		\emph{Pattern: } \\ Patterns such as the MVC (Model-View-Controller) can be used to implement security as all the different aspects of the system are handled separately, hence security is built into the system.\\
-		
-	\subsection{Important Quality Requirements}
-		%Jess
-		\subsubsection{Performance}
-		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc, as well as the system maintainer.\\
-		
-		\emph{Motivation: }\\ This requirement is classified as important rather than critical as performance plays an important role when it comes to a system such as the one at hand but does not play a vital role. If a discussion forum is slow or lacks in performance in certain areas, then the system itself will still function and continue to work just at a slower pace. This however does not affect the system in a major way.	\\
-		
-		\emph{Description: }\\This quality is used in the context of the system running smoothing and upholding a high level of performance. \\
-		The system should not lack in performance. It should flow smoothly and quickly between users activities and actions. The system should display appropriate and correct information at all times. The system should not have lag and should have a high speed of performance. When feedback and statistics are requested, the system should generate them in a timely fashion. The system should not hog essential computer resources such as RAM, memory or CPU time.\\
-		
-		\emph{Strategy: }\\ There are many ways in which good performance can be achieved. The system should be implemented in such a way, that unnecessary memory space is not used up. The system should guarantee that no infinite loops and glitches will be encountered where by the CPU time will be consumed and the system will struggle with performance. Mechanisms such as threading should be used in order to make processing faster and thus better the performance. Concurrency is also vital to improve performance. To name but a few. \\
-		
-	\emph{Pattern: }\\ Several patterns can be explored when it comes to improving performance. Flyweight design pattern reduces memory consumption, The Proxy pattern can be used for speed optimization and the Bridge pattern can change the implementation of an abstraction on the fly by always picking the most efficient one.\\
 			
-		%Sphe
-		\subsubsection{Maintainability}
-		\emph{Stakeholders: }\\ The development team and system maintainers \\ 
-		\\\emph{Motivation: }\\ Any software will eventually need to be updated or fixed at some point. Since this is an issue we will definitely run into at some point, it is imperative that we prepare for it. Having a maintainable system means this task will be done much faster and with much less effort. Also we avoid the risk of compromising other quality requirements like security or system integrity. \\ 
-		\\\emph{Description: }\\ This requirement enforces that the system be easy to maintain and/or update/modify without compromising the security and integrity of the site. It should be possible to modify/maintain the parts of the system without modifying the entire system. \\ 
-		\\\emph{Strategy: }\\ The system should be separated into different components that make use of each other to operate. Components, however, should not depend on the internal details of other components. It should simply request a service and take the response. This ensures that modifying components’ internal information won’t mean having to change all components that make use of it. \\
-		\\\emph{Pattern: }\\ The Pipe and Filter pattern is ideal for this. The various components of the system will act as the filters. Since filters deal with input they were given (They are not concerned with where the data comes from) and produce output without being concerned about any of the other filters, it becomes easy to modify other filters without affecting any of the other. This is perfect for system maintainability.
-			
-		%Jess
-		\subsubsection{Usability}
-		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc as well as the system maintainer.\\
-		
-		\emph{Motivation: }\\ This requirement is classified as important rather than critical as it is important for a system to be easy to use by the client. However if the system if not fully user friendly and has slight usability issues, it will not affect the system itself and it can be dealt with easily through user manuals and instructions. \\
-		
-		\emph{Description: }\\ This quality is used in the context of the system being operational and usable by its users. It forms the foundation of the system. If this quality does not exist then the system its self will not exist.\\
-		Any user who is registered to a module that makes use of the system and is capable of using a basic discussion forum should be able to make use of the system without a user manual. Thus any user who has any background knowledge of social media and discussion forums should be able to navigate and understand the system with little to no effort. The system has to be designed and implemented in such a way that it has to be functional and the users find is “usable”. The same applies for the system maintainers. The system has to be implemented and designed in such a way that it is easy and simple to use by the system maintainers in order to maintain the system.\\
-		
-		\emph{Stratagy: }\\ In order to make a system usable, the system has to be user friendly and the user should be able to interact with the system with little effort. This can be achieved by designing the system in such a way that the activities the user can perform are limited and easy to complete. The interface its self should be easy to follow and understand. User manuals and instructions can also be provided.\\
 			
 		%Kale-ab
 		\subsubsection{Integratability}
@@ -329,11 +316,26 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		\\\emph{Stratagy: }\\
 		
 	\subsection{Nice-To-Have Quality Requirements}
+		%Jess
+		\subsubsection{Performance}
+		\emph{Stakeholders: }\\ The stakeholders for this requirement are: the users such as students, clients, lecturers, staff, tutors etc, as well as the system maintainer.\\
+		
+		\emph{Motivation: }\\ This requirement is classified as nice-to-have  as performance plays an important role when it comes to a system such as the one at hand but does not play a vital role. If a discussion forum is slow or lacks in performance in certain areas, then the system itself will still function and continue to work just at a slower pace. This however does not affect the system in a major way.	\\
+		
+		\emph{Description: }\\This quality is used in the context of the system running smoothing and upholding a high level of performance. \\
+		The system should not lack in performance. It should flow smoothly and quickly between users activities and actions. The system should display appropriate and correct information at all times. The system should not have lag and should have a high speed of performance. When feedback and statistics are requested, the system should generate them in a timely fashion. The system should not hog essential computer resources such as RAM, memory or CPU time.\\
+		
+		\emph{Strategy: }\\ There are many ways in which good performance can be achieved. The system should be implemented in such a way, that unnecessary memory space is not used up. The system should guarantee that no infinite loops and glitches will be encountered where by the CPU time will be consumed and the system will struggle with performance. Mechanisms such as threading should be used in order to make processing faster and thus better the performance. Concurrency is also vital to improve performance. To name but a few. \\
+		
+		\emph{Pattern: }\\ Several patterns can be explored when it comes to improving performance. Flyweight design pattern reduces memory consumption, The Proxy pattern can be used for speed optimization and the Bridge pattern can change the implementation of an abstraction on the fly by always picking the most efficient one.\\
+		
 		%Sphe
-		\subsubsection{Monitoring And Auditability}
-		\emph{Stakeholders: }\\ System administrators and maintainers\\
-		\\\emph{Motivation: }\\ This will help with ensuring users of the site adhere to the systems netiquette and plagiarism policies. Any infringement of these will notify the administrator, who will take action to rectify the matter. The logging of users actions can be reviewed for whatever reason at a later stage to serve as evidence of action for whatever reason it is needed. \\
-		\\\emph{Description: }\\ The activity of users being monitored and logged somewhere to be reviewed at some point. Action can then be taken by the administrator based on the logged actions. \\
+		\subsubsection{Maintainability}
+		\emph{Stakeholders: }\\ The development team and system maintainers \\ 
+		\\\emph{Motivation: }\\ Any software will eventually need to be updated or fixed at some point. Since this is an issue we will definitely run into at some point, it is imperative that we prepare for it. Having a maintainable system means this task will be done much faster and with much less effort. Also we avoid the risk of compromising other quality requirements like security or system integrity. \\ 
+		\\\emph{Description: }\\ This requirement enforces that the system be easy to maintain and/or update/modify without compromising the security and integrity of the site. It should be possible to modify/maintain the parts of the system without modifying the entire system. \\ 
+		\\\emph{Strategy: }\\ The system should be separated into different components that make use of each other to operate. Components, however, should not depend on the internal details of other components. It should simply request a service and take the response. This ensures that modifying components’ internal information won’t mean having to change all components that make use of it. \\
+		\\\emph{Pattern: }\\ The Pipe and Filter pattern is ideal for this. The various components of the system will act as the filters. Since filters deal with input they were given (They are not concerned with where the data comes from) and produce output without being concerned about any of the other filters, it becomes easy to modify other filters without affecting any of the other. This is perfect for system maintainability.		
 			
 		%Kale-ab
 		\subsubsection{Testability}
@@ -398,7 +400,6 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \subsection{Integration Channel}
 \subsection{Protocols}
 \subsection{API Specifications}
-\subsection{Quality Requirements}
 
 \newpage
 \section{Architecture Constraints}
