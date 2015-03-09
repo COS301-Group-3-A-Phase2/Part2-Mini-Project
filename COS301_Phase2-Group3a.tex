@@ -264,16 +264,17 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		%Sphe
 		\subsubsection{Reliability And Availability}
 		\emph{Stakeholders: }\\ Users of the website i.e. students, lecturers, tutors, teaching assistants and system administrator. \\
-		\\\emph{Motivation: }\\ Should the system be unavailable it means that stakeholders have no way of retrieving any information on the system. This could result in important announcements being missed and/or students being unable to get the help they need on a specific topic. \\
 		\\\emph{Description: }\\ This entails the system having as minimal as possible down time and there being no bugs or hardware failures that will cause the system to be unavailable \\
-		\\\emph{Stratagy: }\\
+		\\\emph{Motivation: }\\ Should the system be unavailable it means that stakeholders have no way of retrieving any information on the system. This could result in important announcements being missed and/or students being unable to get the help they need on a specific topic. \\
+		
+		\emph{Stratagy: }\\
 		\begin{itemize}
 		\item Redundancy in the system. This eliminates a single point of failure. So that if a component in the system fails, it doesn’t cripple the entire system, because there other components that can carry the work.
 		
 		\item Failure detection as it occurs. Should the system run in to a fault the system maintainer should be notified immediately so he can rectify it. 
 		\end{itemize}
 		
-		\emph{Pattern: }\\ Run-time Reconfiguration Pattern ensures the system is designed in such a way that it can be reconfigured without requiring redeployment or restarting the application. This will minimize system downtime, thus maximizing availability.
+		\emph{Pattern: }\\ Run-time Reconfiguration Pattern ensures the system is designed in such a way that it can be reconfigured without requiring redeployment or restarting the application. Hosting infrastructure sends notifications for any configuration changes. Application will examine the change and apply them to relevant components. From this point onwards, the system will use the new configuration value in the application. This will minimize system downtime, thus maximizing availability.
 		
 		%Jess
 		\subsubsection{Usability}
@@ -289,9 +290,9 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		%Sphe
 		\subsubsection{Monitoring And Auditability}
 		\emph{Stakeholders: }\\ System administrators and maintainers\\
-		\\\emph{Motivation: }\\ This will help with ensuring users of the site adhere to the systems netiquette and plagiarism policies. Any infringement of these will notify the administrator, who will take action to rectify the matter. The logging of users actions can be reviewed for whatever reason at a later stage to serve as evidence of action for whatever reason it is needed. \\
-		\\\emph{Description: }\\ The activity of users being monitored and logged somewhere to be reviewed at some point. Action can then be taken by the administrator based on the logged actions. \\	
-	
+		
+		\emph{Description: }\\ The activity of users being monitored and logged somewhere to be reviewed at some point. Action can then be taken by the administrator based on the logged actions. \\	
+		\\\emph{Motivation: }\\ This is an important requirement of the system as one of the core responsibilities of this system is to award user participation with points to increase their rank on the system. The system, therefore, needs to be able to log user activity so adjustments can be made to their ranking. /likewise with checking for netiquette and plagiarism infringements. Without the system being monitorable, none of this is possible. \\
 		
 	\subsection{Important Quality Requirements}
 		%Jess
@@ -332,10 +333,11 @@ PHP’s implicit MVC features will be used to implement this architecture.
 		%Sphe
 		\subsubsection{Maintainability}
 		\emph{Stakeholders: }\\ The development team and system maintainers \\ 
-		\\\emph{Motivation: }\\ Any software will eventually need to be updated or fixed at some point. Since this is an issue we will definitely run into at some point, it is imperative that we prepare for it. Having a maintainable system means this task will be done much faster and with much less effort. Also we avoid the risk of compromising other quality requirements like security or system integrity. \\ 
-		\\\emph{Description: }\\ This requirement enforces that the system be easy to maintain and/or update/modify without compromising the security and integrity of the site. It should be possible to modify/maintain the parts of the system without modifying the entire system. \\ 
-		\\\emph{Strategy: }\\ The system should be separated into different components that make use of each other to operate. Components, however, should not depend on the internal details of other components. It should simply request a service and take the response. This ensures that modifying components’ internal information won’t mean having to change all components that make use of it. \\
-		\\\emph{Pattern: }\\ The Pipe and Filter pattern is ideal for this. The various components of the system will act as the filters. Since filters deal with input they were given (They are not concerned with where the data comes from) and produce output without being concerned about any of the other filters, it becomes easy to modify other filters without affecting any of the other. This is perfect for system maintainability.		
+		\\\emph{Description: }\\ This requirement enforces that the system be easy to maintain and/or update/modify without compromising the security and integrity of the site. It should be possible to modify/maintain the parts of the system without modifying the entire system. \\
+		\\\emph{Motivation: }\\ Any software will eventually need to be updated or fixed at some point. Since this is an issue we will definitely run into at some point, it would be convenient if we prepared for it. Having a maintainable system means this task will be done much faster and with much less effort. Also we avoid the risk of compromising other quality requirements like security or system integrity. \\ 
+		 
+		\emph{Strategy: }\\ The system should be separated into different components that make use of each other to operate. Components, however, should not depend on the internal details of other components. It should simply request a service and take the response. This ensures that modifying components’ internal information won’t mean having to change all components that make use of it. \\
+		\\\emph{Pattern: }\\ The Pipe and Filter pattern is ideal for this. The various components of the system will act as the filters. Since filters deal with input they were given (They are not concerned with where the data comes from) and produce output without being concerned about any of the other filters, it becomes easy to modify other filters without affecting any of the others. This makes maintenance easier, especially if, for example, it is only parts of the entire system that need modification.		
 			
 		%Kale-ab
 		\subsubsection{Testability}
