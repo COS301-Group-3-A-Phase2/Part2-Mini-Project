@@ -401,10 +401,33 @@ PHP’s implicit MVC features will be used to implement this architecture.
 %\end{comment}
 	
 	
+
 \section{Integration Requirements}
 \subsection{Integration Channel}
+\begin{description}
+\item CS Website - Will be integrated to work with the BuzzSpaces, each CS module having its own BuzzSpace.
+\item LDAP - This the Computer Science Data Source Adapter, which is used to connect to and retrieve necessary information from the external Computer science database. 
+\item Buzz Moderation - Is a plug-in that moderates the use of language and spam detection on the Buzz system.
+\item Buzz Notification - An add-on that will be used to notify users via email, when there are status changes,
+	moderation failures and appraisals which have been received.
+\item Buzz Reporting - An add-on that a user or lecturer can use to define and generate their own reports.
+\item RDMS - A relational database management system will be used to store and retrieve all data/information that is directly connected to the Buzz system. 
+\item Both client- and server-side scripting to facilitate database access and algorithms.
+\item File creation and storage for the communication of information between modules.
+\end{description}
+
 \subsection{Protocols}
+\begin{description}
+\item HTTPS - Is the transfer protocol for the web interface. Main reason for using this rather than just HTTP is that HTTPS is more secure.
+\item SMTP - Is an emailing protocol that will be used for sending email notifications to users with the Buzz Notification.	
+\item TCP/IP-is the transport layer used to provide devices with a connection to a router 
+	and thus also the internet.
+\end{description}
 \subsection{API Specifications}
+\begin{description}
+\item Buzz uses a REST API. This means that the API consists of a set of resouces which you can request or manipulate using the standard HTTP methods GET and POST.
+\item This request system might be used to link user graphs to other websites, perhaps work profile sites like linkedIn.
+\end{description}
 
 \newpage
 \section{Architecture Constraints}
