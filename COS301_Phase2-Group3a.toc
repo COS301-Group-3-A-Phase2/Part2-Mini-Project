@@ -11,25 +11,25 @@
 \contentsline {section}{\numberline {4}Quality Requirements}{7}{section.0.4}
 \contentsline {subsection}{\numberline {4.1}Critical Quality Requirements}{7}{subsection.0.4.1}
 \contentsline {subsubsection}{Scalability}{7}{section*.2}
-\contentsline {subsubsection}{Reliability And Availability}{7}{section*.3}
-\contentsline {subsubsection}{Usability}{8}{section*.4}
-\contentsline {subsubsection}{Monitoring And Auditability}{9}{section*.5}
-\contentsline {subsection}{\numberline {4.2}Important Quality Requirements}{9}{subsection.0.4.2}
-\contentsline {subsubsection}{Security}{9}{section*.6}
-\contentsline {subsubsection}{Integratability}{10}{section*.7}
-\contentsline {subsection}{\numberline {4.3}Nice-To-Have Quality Requirements}{10}{subsection.0.4.3}
-\contentsline {subsubsection}{Performance}{10}{section*.8}
-\contentsline {subsubsection}{Maintainability}{11}{section*.9}
-\contentsline {subsubsection}{Testability}{12}{section*.10}
-\contentsline {section}{\numberline {5}Integration Requirements}{12}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Integration Channel}{12}{subsection.0.5.1}
-\contentsline {subsection}{\numberline {5.2}Protocols}{13}{subsection.0.5.2}
-\contentsline {subsection}{\numberline {5.3}API Specifications}{13}{subsection.0.5.3}
-\contentsline {section}{\numberline {6}Architecture Constraints}{14}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}System}{14}{subsection.0.6.1}
-\contentsline {subsection}{\numberline {6.2}User}{14}{subsection.0.6.2}
-\contentsline {subsection}{\numberline {6.3}Time}{14}{subsection.0.6.3}
-\contentsline {subsection}{\numberline {6.4}Technologies}{14}{subsection.0.6.4}
-\contentsline {subsection}{\numberline {6.5}Architectural Patterns/Frameworks}{15}{subsection.0.6.5}
-\contentsline {section}{\numberline {7}References}{15}{section.0.7}
-\contentsline {section}{\numberline {8}Glossary}{15}{section.0.8}
+\contentsline {subsubsection}{Reliability And Availability}{8}{section*.3}
+\contentsline {subsubsection}{Usability}{9}{section*.4}
+\contentsline {subsubsection}{Monitoring And Auditability}{10}{section*.5}
+\contentsline {subsection}{\numberline {4.2}Important Quality Requirements}{10}{subsection.0.4.2}
+\contentsline {subsubsection}{Security}{10}{section*.6}
+\contentsline {subsubsection}{Integratability}{11}{section*.7}
+\contentsline {subsection}{\numberline {4.3}Nice-To-Have Quality Requirements}{12}{subsection.0.4.3}
+\contentsline {subsubsection}{Performance}{12}{section*.8}
+\contentsline {subsubsection}{Maintainability}{13}{section*.9}
+\contentsline {subsubsection}{Testability}{14}{section*.10}
+\contentsline {section}{\numberline {5}Integration Requirements}{15}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Integration Channel}{15}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}Protocols}{15}{subsection.0.5.2}
+\contentsline {subsection}{\numberline {5.3}API Specifications}{15}{subsection.0.5.3}
+\contentsline {section}{\numberline {6}Architecture Constraints}{16}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}System}{16}{subsection.0.6.1}
+\contentsline {subsection}{\numberline {6.2}User}{16}{subsection.0.6.2}
+\contentsline {subsection}{\numberline {6.3}Time}{16}{subsection.0.6.3}
+\contentsline {subsection}{\numberline {6.4}Technologies}{16}{subsection.0.6.4}
+\contentsline {subsection}{\numberline {6.5}Architectural Patterns/Frameworks}{17}{subsection.0.6.5}
+\contentsline {section}{\numberline {7}References}{17}{section.0.7}
+\contentsline {section}{\numberline {8}Glossary}{17}{section.0.8}
