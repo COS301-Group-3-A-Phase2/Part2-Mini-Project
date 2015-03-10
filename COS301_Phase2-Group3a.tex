@@ -429,13 +429,12 @@ PHP’s implicit MVC features will be used to implement this architecture.
 \item This request system might be used to link user graphs to other websites, perhaps work profile sites like linkedIn.
 \end{description}
 
-\newpage
 \section{Architecture Constraints}
 
 \subsection{System}
 	\begin{description}
 \item The BuzzSpace has to be integrated into the CS department’s website. 
- \item Reason: The user’s credentials from the CS LDAP will be used for authentication 
+ \item \texttt{Reason:} The user’s credentials from the CS LDAP will be used for authentication 
 \item  purposes in the BuzzSpace e.g. to register on the BuzzSpace to login.
 \end{description}
 
@@ -449,14 +448,14 @@ Only users registered for a module from the CS department will be allowed to
 	\begin{description}
 	\item[$\bullet$] 
 Users who are registered as guests on the BuzzSpace will only be allowed to read and \item observe the discussion forums. 
-\item Reason: To manage who has access to the BuzzSpace.
+\item \texttt{Reason:} To manage who has access to the BuzzSpace.
 \end{description}
 
 \subsection{Time}
 	\begin{description}
 \item If a user is logged in and remains inactive for more than 30mins the user 
 \item will have to login again to post on the forum. 
-\item  Reason: To ensure security for user Authentication. 
+\item \texttt{Reason:} To ensure security for user Authentication. 
 \end{description}
 
 \subsection{Technologies}
@@ -464,21 +463,55 @@ Users who are registered as guests on the BuzzSpace will only be allowed to read
 \item[$\bullet$] HTML
 \item To create the skeleton of the BuzzSpace's front-end to enable users to login/logout
 \item create forums and participate in discussions.
-\item [$\bullet$] Javascript and  AJAX
+\item [$\bullet$] JAVASCRIPT and  AJAX
 \item Used for the BuzzSpace's front-end to verify the login details of each user and will keep 
 \item track of user login and particiaptions on discussion forums.
+\item [$\bullet$] XML
+\item Will be used to define messages passed between objects. 
 \item [$\bullet$] PHP
-\item Allows the front end to communicate with the CS LDAP database to access user \item credentials for authentication purposes for logging in to the BuzzSpace.
+\item Is used by many large websites. Will allow system to offer support
+\item to a thousand simlultaneous users.
+\item [$\bullet$] CakePHP
+\item Makes coding in PHP much easier and efficient.
+\item It is also based on the MVC architecture.
 \item [$\bullet$] JavaEE
-\item [$\bullet$] JPA and JPQL
+\item Integrating the system will be easier because JavaEE is
+\item already used within the client website.
+\item [$\bullet$] JPA
+\item Will be used to manage the relational data in JavaEE.
+\item [$\bullet$] JQL
+\item Creates queries for the database.
+\item [$\bullet$] JSF
+\item Used to build component user interface.
+\item [$\bullet$] COBALT
+\item JSF will be coded in COBALT and AJAX. COBALT is simple and flexible to use.
+\item [$\bullet$] MySQL
+\item It is a relational database. The system needs for multiple database
+\item connections with connection polling.
+\item [$\bullet$] Web browsers\\
+\texttt{Chrome}\\
+\texttt{FireFox}\\
+\texttt{Opera}\\
+\texttt{Safari}\\
+\texttt{IE(Internet explora)}
 \end{description}
 
 \subsection{Architectural Patterns/Frameworks}
 	\begin{description}
-\item[$\bullet$] Layer (object-oriented design)
+\item[$\bullet$] Layer (object-oriented design)\\
+\texttt{Services Layer}\\
+The CRUD actions that will change the database will be intercepted in this layer. \\ \\
+\texttt{Business Logic Layer}\\
+Will capture information of requests from objects and submit the services request.\\ \\
+\texttt{Multi-Layered}\\
+MVC model uses this approach to enable the separation of business logic.\\ \\
+\texttt{Transport Layer}\\
+Used to provide devices with connection to a router.
 \item[$\bullet$] MVC (Model View Controller)
-\item[$\bullet$] Peer-to-Peer Network
-\item[$\bullet$] Services Oriented Architectures
+\item Allows the system's states to change and it encapsulates the interactions
+\item from the user and transforms these intercations into business logic.
+\item[$\bullet$] SOA(Services Oriented Architectures)
+\item It is agile and flexible. Allows change and easy alterations to the system.
 \end{description}
 \section{References}
 PIETERSE, V. 2015. COS301: Mini project Buzz. In: Lecture notes issued online. University of Pretoria. Pretoria, South Africa
